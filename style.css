@@ -1,0 +1,214 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background:#FCFAFB;
+}
+
+.navbar{
+    height:72px;
+    background:#FFFFFF;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 35px;
+
+    border-bottom:1px solid #EEDCE2;
+
+    box-shadow:0 5px 20px rgba(132,87,99,.08);
+}
+.nav-logo{
+    width:170px;
+    height:50px;
+}
+
+.logo{
+    width:100%;
+    height:100%;
+
+    background-image:url("./assets/images/Taskflow-logo.png");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain;
+}
+.search-bar{
+
+    width:420px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+
+    background:#FCFAFB;
+
+    border:1px solid #EEDCE2;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.search-bar:hover{
+
+    border-color:#E491A6;
+
+}
+
+.search-bar:focus-within{
+
+    border-color:#E491A6;
+
+    box-shadow:0 0 0 4px rgba(228,145,166,.15);
+
+}
+
+/* Search Icon */
+
+.search-logo{
+
+    width:50px;
+    height:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#845763;
+
+    font-size:15px;
+}
+
+/* Input */
+
+.search-bar input{
+
+    flex:1;
+
+    height:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:15px;
+
+    color:#2E2A2F;
+}
+
+.search-bar input::placeholder{
+
+    color:#9A8A91;
+
+}
+
+.profile{
+
+    display:flex;
+    align-items:center;
+
+    gap:18px;
+}
+
+/* Notification */
+
+.bell-icon{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#FCFAFB;
+
+    border:1px solid #EEDCE2;
+
+    cursor:pointer;
+
+    color:#845763;
+
+    transition:.3s;
+}
+
+.bell-icon:hover{
+
+    background:#E491A6;
+
+    color:white;
+
+}
+
+/* Profile */
+
+.profile-icon{
+
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    background:#FCFAFB;
+
+    padding:8px 14px;
+
+    border-radius:12px;
+
+    border:1px solid #EEDCE2;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.profile-icon:hover{
+
+    background:#FFF3F7;
+
+}
+
+.profile-icon .fa-circle-user{
+
+    font-size:28px;
+
+    color:#845763;
+
+}
+
+.user-name{
+
+    font-size:15px;
+
+    font-weight:500;
+
+    color:#2E2A2F;
+
+}
+
+.profile-icon .fa-caret-down{
+
+    color:#845763;
+
+    font-size:13px;
+}
+.nav-right{
+    
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+    
+
