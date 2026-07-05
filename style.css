@@ -208,6 +208,35 @@ body{
     align-items:center;
     gap:20px;
 }
+.sidebar{
+    width:240px;
+    height:100vh;
+    background:#FFFFFF;
 
-    
+    display:flex;
+    flex-direction:column;
 
+    gap:12px;
+    padding:20px;
+
+    border-right:1px solid #EEDCE2;
+}
+.menu-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 16px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.menu-item:hover{
+    background:#FFF3F7;
+}
+
+.active{
+    background:#E491A6;
+    color:white;
+    font-weight:600;
+}
