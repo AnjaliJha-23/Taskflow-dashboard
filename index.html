@@ -24,7 +24,7 @@
                 <div class="search-logo">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <input type="search-input" placeholder="Search tasks,projects">
+                <input type="search" placeholder="Search tasks,projects">
             </div>
             <div class="nav-right">
                 <div class="bell-icon">
@@ -40,16 +40,18 @@
             </div>
         </div>
     </header>
-    <div class="sidebar">
+    <div class="layout">
+        <div class="sidebar">
 
-        <div class="menu-item active">
-            <i class="fa-solid fa-house"></i>
-            <span>Dashboard</span>
-        </div>
+            <div class="menu-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </div>
 
-        <div class="menu-item">
-            <i class="fa-solid fa-list-check"></i>
-            <span>My Tasks</span>
+            <div class="menu-item">
+                <i class="fa-solid fa-list-check"></i>
+                <span>My Tasks</span>
+            </div>
             <div class="menu-item">
                 <i class="fa-solid fa-calendar"></i>
                 <span>Calendar</span>
@@ -76,7 +78,94 @@
                 <span>Help & Support</span>
             </div>
         </div>
-    </div>
+        <div class="main-content">
+            <div class="welcome-section">
+
+                <div class="welcome-top">
+
+                    <div class="welcome-text">
+
+                        <h1>👋Good Morning, Anjali Jha!</h1>
+                        <pre>            Let's make the most out of today!</pre>
+                    </div>
+
+                    <button class="task-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Task
+                    </button>
+
+                </div>
+
+            </div>
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <i class="fa-solid fa-list-check"></i>
+                    <h2>24</h2>
+                    <p>Total Tasks</p>
+                </div>
+
+                <div class="stat-card">
+                    <i class="fa-solid fa-spinner"></i>
+                    <h2>6</h2>
+                    <p>In Progress</p>
+                </div>
+
+                <div class="stat-card">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h2>18</h2>
+                    <p>Completed</p>
+                </div>
+
+                <div class="stat-card">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h2>75%</h2>
+                    <p>Productivity</p>
+                </div>
+
+            </div>
+
+            <div class="dashboard-bottom">
+
+                <div class="task-card">
+
+                    <h2>Today's Tasks</h2>
+
+                    <div class="task">
+                        <span>🎨 Design Landing Page</span>
+                        <span class="high">High</span>
+                    </div>
+
+                    <div class="task">
+                        <span>📚 Learn JavaScript</span>
+                        <span class="medium">Medium</span>
+                    </div>
+
+                    <div class="task">
+                        <span>🚀 Push to GitHub</span>
+                        <span class="done">Done</span>
+                    </div>
+
+                </div>
+
+                <div class="deadline-card">
+
+                    <h2>Upcoming Deadlines</h2>
+
+                    <div class="deadline">
+                        <span>Resume AI Project</span>
+                        <span>Tomorrow</span>
+                    </div>
+
+                    <div class="deadline">
+                        <span>TaskFlow Dashboard</span>
+                        <span>7 July</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
 </body>
 
 </html>
