@@ -1,25 +1,92 @@
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskContainer = document.getElementById("taskContainer");
 
+const totalTasksCount = document.getElementById("totalTasksCount");
+const inProgressCount = document.getElementById("inProgressCount");
+const completedCount = document.getElementById("completedCount");
+const productivityPercent = document.getElementById("productivityPercent");
 
-const deleteButtons = document.querySelectorAll(".delete-btn");
+function updateDashboard() {
 
-deleteButtons.forEach(function (button) {
+    const tasks = document.querySelectorAll(".task");
+
+    let total = tasks.length;
+    let completed = 0;
+    let inProgress = 0;
+
+    tasks.forEach((task) => {
+
+        if (task.querySelector(".done")) {
+            completed++;
+        } else {
+            inProgress++;
+        }
+
+    });
+
+    totalTasksCount.textContent = total;
+    completedCount.textContent = completed;
+    inProgressCount.textContent = inProgress;
+
+    let productivity = 0;
+
+    if (total > 0) {
+        productivity = Math.round((completed / total) * 100);
+    }
+
+    productivityPercent.textContent = productivity + "%";
+
+}
+
+function addDeleteFunction(button) {
 
     button.addEventListener("click", function () {
 
-        button.parentElement.remove();
+        button.closest(".task").remove();
+
+        updateDashboard();
 
     });
+
+}
+
+const deleteButtons = document.querySelectorAll(".delete-btn");
+
+deleteButtons.forEach((button) => {
+
+    addDeleteFunction(button);
 
 });
 
 addTaskBtn.addEventListener("click", function () {
 
-    const addTaskName = prompt("Enter your task");
+    const taskName = prompt("Enter your task");
 
-    if (addTaskName === null || addTaskName.trim() === "") {
+    if (taskName === null || taskName.trim() === "") {
         return;
+    }
+
+    let priority = prompt(
+        "Enter Priority:\nHigh\nMedium\nDone"
+    );
+
+    if (priority === null || priority.trim() === "") {
+        priority = "Medium";
+    }
+
+    priority = priority.toLowerCase();
+
+    let priorityClass = "medium";
+    let priorityText = "Medium";
+
+    if (priority === "high") {
+        priorityClass = "high";
+        priorityText = "High";
+    }
+
+    else if (priority === "done") {
+        priorityClass = "done";
+        priorityText = "Done";
     }
 
     const newTask = document.createElement("div");
@@ -27,22 +94,29 @@ addTaskBtn.addEventListener("click", function () {
     newTask.classList.add("task");
 
     newTask.innerHTML = `
-        <span>📚 ${addTaskName}</span>
+        <span>📌 ${taskName}</span>
 
         <div class="task-actions">
-            <span class="medium">Medium</span>
-            <button class="delete-btn">❌</button>
+
+            <span class="${priorityClass}">
+                ${priorityText}
+            </span>
+
+            <button class="delete-btn">
+                ❌
+            </button>
+
         </div>
     `;
 
-    const deleteBtn = newTask.querySelector(".delete-btn");
-
-    deleteBtn.addEventListener("click", function () {
-
-        newTask.remove();
-
-    });
-
     taskContainer.appendChild(newTask);
 
+    const deleteBtn = newTask.querySelector(".delete-btn");
+
+    addDeleteFunction(deleteBtn);
+
+    updateDashboard();
+
 });
+
+updateDashboard();
