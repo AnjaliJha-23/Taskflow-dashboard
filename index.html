@@ -2,46 +2,75 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taskflow</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow Dashboard</title>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="nav-logo">
-                <div class="logo">
 
-                </div>
+    <!-- ========================= -->
+    <!-- Navbar -->
+    <!-- ========================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="nav-logo">
+                <div class="logo"></div>
             </div>
+
             <div class="search-bar">
                 <div class="search-logo">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <input type="search" placeholder="Search tasks,projects">
+
+                <input type="search" placeholder="Search tasks, projects">
             </div>
+
             <div class="nav-right">
+
                 <div class="bell-icon">
-                    <i class="fa-solid fa-bell" style="height: 22px;"></i>
+                    <i class="fa-solid fa-bell"></i>
                 </div>
+
                 <div class="profile">
                     <div class="profile-icon">
-                        <i class="fa-solid fa-circle-user"> </i>
-                        <div class="user-name">Anjali Jha</div>
+
+                        <i class="fa-solid fa-circle-user"></i>
+
+                        <span class="user-name">
+                            Anjali Jha
+                        </span>
+
                         <i class="fa-solid fa-caret-down"></i>
+
                     </div>
                 </div>
+
             </div>
-        </div>
+
+        </nav>
     </header>
+
+    <!-- ========================= -->
+    <!-- Main Layout -->
+    <!-- ========================= -->
+
     <div class="layout">
-        <div class="sidebar">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
 
             <div class="menu-item active">
                 <i class="fa-solid fa-house"></i>
@@ -52,6 +81,7 @@
                 <i class="fa-solid fa-list-check"></i>
                 <span>My Tasks</span>
             </div>
+
             <div class="menu-item">
                 <i class="fa-solid fa-calendar"></i>
                 <span>Calendar</span>
@@ -61,111 +91,217 @@
                 <i class="fa-solid fa-chart-line"></i>
                 <span>Analytics</span>
             </div>
+
             <div class="menu-item">
                 <i class="fa-solid fa-folder"></i>
                 <span>Projects</span>
             </div>
+
             <div class="menu-item">
                 <i class="fa-solid fa-bullseye"></i>
                 <span>Goals</span>
             </div>
+
             <div class="menu-item">
                 <i class="fa-solid fa-gear"></i>
                 <span>Settings</span>
             </div>
+
             <div class="menu-item">
                 <i class="fa-regular fa-circle-question"></i>
                 <span>Help & Support</span>
             </div>
-        </div>
-        <div class="main-content">
-            <div class="welcome-section">
+
+        </aside>
+
+        <!-- ========================= -->
+        <!-- Main Content -->
+        <!-- ========================= -->
+
+        <main class="main-content">
+
+            <!-- Welcome Section -->
+
+            <section class="welcome-section">
 
                 <div class="welcome-top">
 
                     <div class="welcome-text">
 
-                        <h1>👋Good Morning, Anjali Jha!</h1>
-                        <pre>            Let's make the most out of today!</pre>
+                        <h1>👋 Good Morning, Anjali Jha!</h1>
+
+                        <p>
+                            Let's make the most out of today!
+                        </p>
+
                     </div>
 
-                    <button class="task-btn">
+                    <button class="task-btn" id="addTaskBtn">
+
                         <i class="fa-solid fa-plus"></i>
+
                         Add Task
+
                     </button>
 
                 </div>
 
-            </div>
-            <div class="stats-grid">
+            </section>
+
+            <!-- ========================= -->
+            <!-- Statistics -->
+            <!-- ========================= -->
+
+            <section class="stats-grid">
 
                 <div class="stat-card">
+
                     <i class="fa-solid fa-list-check"></i>
-                    <h2>24</h2>
+
+                    <h2 id="totalTasksCount">24</h2>
+
                     <p>Total Tasks</p>
+
                 </div>
 
                 <div class="stat-card">
+
                     <i class="fa-solid fa-spinner"></i>
-                    <h2>6</h2>
+
+                    <h2 id="inProgressCount">6</h2>
+
                     <p>In Progress</p>
+
                 </div>
 
                 <div class="stat-card">
+
                     <i class="fa-solid fa-circle-check"></i>
-                    <h2>18</h2>
+
+                    <h2 id="completedCount">18</h2>
+
                     <p>Completed</p>
+
                 </div>
 
                 <div class="stat-card">
+
                     <i class="fa-solid fa-bullseye"></i>
-                    <h2>75%</h2>
+
+                    <h2 id="productivityPercent">75%</h2>
+
                     <p>Productivity</p>
+
                 </div>
 
-            </div>
+            </section>
 
-            <div class="dashboard-bottom">
+            <!-- ========================= -->
+            <!-- Bottom Section -->
+            <!-- ========================= -->
+
+            <section class="dashboard-bottom">
+
+                <!-- Today's Tasks -->
 
                 <div class="task-card">
 
                     <h2>Today's Tasks</h2>
 
-                    <div class="task">
-                        <span>🎨 Design Landing Page</span>
-                        <span class="high">High</span>
-                    </div>
+                    <div id="taskContainer">
 
-                    <div class="task">
-                        <span>📚 Learn JavaScript</span>
-                        <span class="medium">Medium</span>
-                    </div>
+                        <div class="task">
 
-                    <div class="task">
-                        <span>🚀 Push to GitHub</span>
-                        <span class="done">Done</span>
+                            <span>🎨 Design Landing Page</span>
+
+                            <div class="task-actions">
+
+                                <span class="high">
+                                    High
+                                </span>
+
+                                <button class="delete-btn">
+                                    ❌
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="task">
+
+                            <span>📚 Learn JavaScript</span>
+
+                            <div class="task-actions">
+
+                                <span class="medium">
+                                    Medium
+                                </span>
+
+                                <button class="delete-btn">
+                                    ❌
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="task">
+
+                            <span>🚀 Push to GitHub</span>
+
+                            <div class="task-actions">
+
+                                <span class="done">
+                                    Done
+                                </span>
+
+                                <button class="delete-btn">
+                                    ❌
+                                </button>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
+
+                <!-- Upcoming Deadlines -->
 
                 <div class="deadline-card">
 
                     <h2>Upcoming Deadlines</h2>
 
                     <div class="deadline">
+
                         <span>Resume AI Project</span>
+
                         <span>Tomorrow</span>
+
                     </div>
 
                     <div class="deadline">
+
                         <span>TaskFlow Dashboard</span>
+
                         <span>7 July</span>
+
                     </div>
 
                 </div>
 
-            </div>
-        </div>
-</body>
+            </section>
 
+        </main>
+
+    </div>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+<footer> Made with ❤️ by Anjali Jha </footer>
 </html>
