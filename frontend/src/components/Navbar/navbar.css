@@ -1,0 +1,213 @@
+.navbar {
+  min-height: 72px;
+  background: #ffffff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 35px;
+
+  border-bottom: 1px solid #eedce2;
+
+  box-shadow: 0 5px 20px rgba(132, 87, 99, 0.08);
+
+  gap: 20px;
+}
+
+.logo {
+  width: 100%;
+  height: 80px;
+
+  object-fit: contain;
+  object-position: left center;
+
+  display: block;
+}
+
+.nav-logo {
+  width: 190px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.search-bar {
+  flex: 1;
+
+  max-width: 420px;
+  min-width: 220px;
+
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+
+  background: #fcfafb;
+
+  border: 1px solid #eedce2;
+
+  border-radius: 14px;
+
+  padding: 0 15px;
+
+  transition: 0.3s;
+}
+
+.search-bar:hover {
+  border-color: #e491a6;
+}
+
+.search-bar:focus-within {
+  border-color: #e491a6;
+
+  box-shadow: 0 0 0 4px rgba(228, 145, 166, 0.15);
+}
+
+.search-icon {
+  margin-right: 10px;
+
+  color: #845763;
+
+  font-size: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 15px;
+
+  font-family: inherit;
+}
+
+.search-bar input::placeholder {
+  color: #9a8a91;
+}
+.nav-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.bell-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  border: 1px solid #eedce2;
+
+  background: #fcfafb;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  transition: 0.3s;
+}
+
+.bell-icon:hover {
+  background: #e491a6;
+
+  transform: translateY(-2px);
+}
+
+.profile-icon {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 8px 15px;
+
+  border-radius: 12px;
+
+  border: 1px solid #eedce2;
+
+  background: #fcfafb;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.profile-icon:hover {
+  background: #fff3f7;
+}
+
+.profile-picture {
+  font-size: 24px;
+}
+
+.user-name {
+  font-size: 15px;
+
+  font-weight: 500;
+}
+
+.dropdown-icon {
+  color: #845763;
+
+  font-size: 13px;
+}
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-wrap: wrap;
+
+    padding: 15px;
+  }
+
+  .nav-logo {
+    width: 150px;
+  }
+
+  .search-bar {
+    order: 3;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-top: 10px;
+  }
+
+  .nav-right {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 12px;
+  }
+
+  .nav-logo {
+    width: 130px;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .profile-icon {
+    padding: 8px 10px;
+  }
+
+  .search-bar {
+    height: 42px;
+  }
+}
